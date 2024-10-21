@@ -2,6 +2,7 @@ package com.campusdual.classroom;
 
 public abstract class Merchandise {
 
+	protected String location;
 	protected String name;
 	protected String uniqueId;
 	protected String responsibleId;
@@ -16,6 +17,9 @@ public abstract class Merchandise {
 		this.responsibleId = responsibleId;
 	}
 
+
+
+
 	public Merchandise(String name, String uniqueId, String responsibleId, int zone, String area, String shelf,
 			int quantity) {
 		this.name = name;
@@ -27,13 +31,17 @@ public abstract class Merchandise {
 		this.quantity = quantity;
 	}
 
+	public Merchandise(String location) {
+		this.location = location;
+	}
+
 	public String getLocation() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Z - ");
+		builder.append("Zona: ");
 		builder.append(getZone());
-		builder.append(" A - ");
+		builder.append(" Area:  ");
 		builder.append(getArea());
-		builder.append(" E - ");
+		builder.append(" Estante: ");
 		builder.append(getShelf());
 		return builder.toString();
 	}
